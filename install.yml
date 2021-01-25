@@ -7,8 +7,14 @@
    apt:
      name: nginx
      state: latest
+     
+ - name: "Install git"
+   apt: 
+     name: git
+     state: present
 
  -name: "Clone git"
   git:
-    repo: git@github.com:ClaraKrchr/PipelineAnsible.git
+    repo: https://github.com/ClaraKrchr/PipelineAnsible.git
     version: master  
+    dest: var/www/html
